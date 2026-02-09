@@ -41,6 +41,8 @@
 
 Murasaki v0.2 系列现已全面发布，覆盖 8B 到 14B 参数量，支持全精度与 GGUF 量化。
 
+> **✨ Now Live:** 无需下载模型，点击 **[Online Demo](https://huggingface.co/spaces/Murasaki-Project/online-demo)** 在线体验模型。
+
 | 模型版本 (Model) | 类型 | 显存参考 | 适用场景 | 下载链接 |
 | :--- | :--- | :--- | :--- | :--- |
 | **Murasaki-14B-v0.2** | **BF16** | 32GB+ | **旗舰版**：最佳性能，科研与微调首选 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-14B-v0.2) |
