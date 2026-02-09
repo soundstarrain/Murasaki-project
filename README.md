@@ -1,50 +1,85 @@
+
 <div align="center">
-  <img src="https://github.com/soundstarrain/Murasaki-Translator/raw/main/GUI/resources/icon.png" width="150" height="150" alt="Murasaki Logo">
-  <h1>Murasaki Project</h1>
+  <img src="https://github.com/soundstarrain/Murasaki-Translator/raw/main/GUI/resources/icon.png" width="160" height="160" style="border-radius: 50%; box-shadow: 0 4px 15px rgba(128, 0, 128, 0.3);">
+  
+  <h1 style="font-size: 2.5em; margin-bottom: 10px;">🔮 Murasaki Project</h1>
   
   <p align="center">
     <strong>System 2 Reasoning Paradigm for ACGN Translation</strong><br>
-    原生 CoT 思维链  ·  长上下文支持 ·  沉浸式翻译体验
+    原生 CoT 思维链 · 长上下文支持 · 沉浸式翻译体验
   </p>
 
-  [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Murasaki_LLM-ffd21e?style=for-the-badge)](https://huggingface.co/Murasaki-Project)
-  [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-  [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge)](https://www.python.org/)
+  <!-- Badges -->
+  <a href="https://huggingface.co/Murasaki-Project" target="_blank">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Murasaki_LLM-ffd21e?style=for-the-badge" alt="Hugging Face">
+  </a>
+  <a href="https://github.com/soundstarrain/Murasaki-Translator" target="_blank">
+    <img src="https://img.shields.io/badge/Tool-Murasaki_GUI-6B21A8?style=for-the-badge&logo=windows" alt="Translator Tool">
+  </a>
+  <a href="https://github.com/soundstarrain/Murasaki-benchmark" target="_blank">
+    <img src="https://img.shields.io/badge/Benchmark-SOTA_Performance-blue?style=for-the-badge&logo=google-analytics" alt="Benchmark">
+  </a>
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+    <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=for-the-badge" alt="License">
+  </a>
 
 </div>
 
+<br>
+
+## 🌌 愿景 (Our Vision)
+
+**Murasaki Project** 致力于探索大语言模型在 **垂直领域文学翻译** 中的极限。
+
+传统的直觉式（System 1）模型往往依赖概率直觉，容易在轻小说复杂的长距离伏笔、细腻的人物语气和频繁的人称省略中出错。
+
+我们提出了 **System 2 Translation Paradigm** —— 通过引入显式思维链 (**Chain-of-Thought**)，让模型像人类资深译者一样：
+> **(先阅读语境 -> 分析文风与逻辑 -> 落笔翻译)**
+
+在 `<think>` 标签内，模型会进行风格定调、动作流解析及人设推导。这种机制精准解决了 ACGN 翻译中 **"主语省略"**、**"人称混淆"** 及 **"风格漂移"** 的三大难题。
+
 ---
 
-## 📖 简介 (Introduction)
+## 📥 模型矩阵 (Model Matrix)
 
-**Murasaki Project** 是一个致力于探索 **System 2 推理范式** 在二次元（ACGN）翻译领域应用的项目。
+Murasaki v0.2 系列现已全面发布，覆盖 8B 到 14B 参数量，支持全精度与 GGUF 量化。
 
-传统的翻译模型（System 1）往往依赖直觉，容易在长难句、代词指代和风格一致性上出错。**Murasaki-8B** 通过引入显式的 **Chain-of-Thought (CoT)**，强制模型在输出译文前进行“思考”。
-
-### 核心特性
-*   **Thinking Process**: 在 `<think>` 标签内进行风格定调、主语补全和逻辑推导。
-*   **Context Aware**: 针对 8k+ 长上下文优化，能记住前文设定的称呼和语气。
-*   **Glossary Injection**: 支持高强度的术语表强制注入。
-
----
-
-## 📥 模型下载 (Download)
-
-| 模型版本 | 精度 | 显存需求 (推理) | 适用场景 | 链接 |
+| 模型版本 (Model) | 类型 | 显存参考 | 适用场景 | 下载链接 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Murasaki-8B-v0.1** | BF16 | 16GB+ | 科研、微调、高精度推理 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.1) |
-| **Murasaki-8B-v0.1-GGUF** | Q4_K_M | 6GB+ | **推荐**：本地个人电脑部署 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.1-GGUF) |
+| **Murasaki-14B-v0.2** | **BF16** | 32GB+ | **旗舰版**：最佳性能，科研与微调首选 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-14B-v0.2) |
+| **Murasaki-14B-v0.2-GGUF** | **GGUF** | 12GB+ | **进阶版**：本地大显存用户推荐 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-14B-v0.2-GGUF) |
+| **Murasaki-8B-v0.2** | BF16 | 24GB+ | **标准版**：全精度权重，均衡之选 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.2) |
+| **Murasaki-8B-v0.2-GGUF** | **GGUF** | 6GB+ | **轻量版**：兼容性最强，适合大多数显卡 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.2-GGUF) |
+
+---
+
+## 📊 评测表现 (Benchmark)
+
+我们在 **[Murasaki-ACGN Benchmark](https://github.com/soundstarrain/Murasaki-benchmark)** 上评估了将近四十个主流模型。
+**Murasaki-14B-v0.2** 在综合得分及长短文本测试中均取得了第一名的成绩。
+
+| Rank | Model | **Overall Avg** | Short | Long |
+| :--- | :--- | :--- | :--- | :--- |
+| 🥇 | **Murasaki-14B-v0.2** | **0.8545** | **0.8289** | **0.8801** |
+| 🥈 | Murasaki-8B-v0.1 | 0.8523 | 0.8269 | 0.8778 |
+| 🥉 | **Murasaki-8B-v0.2** | **0.8522** | **0.8271** | **0.8773** |
+| 4 | Gemini-3-Flash-Preview | 0.8512 | 0.8262 | 0.8765 |
+| 5 | Sakura-Qwen-2.5-14B | 0.8509 | 0.8282 | 0.8735 |
+
+> *注：以上分数基于 IQ4_XS (4-bit) 量化版本测得，全精度版本表现预期更优。*
 
 ---
 
 ## 🛠️ 快速开始 (Usage)
 
 ### 1. 使用 GUI 客户端 (推荐)
-对于大多数用户，推荐使用我们需要配套开发的 GUI 工具，支持一键部署、EPUB 翻译和实时预览。
+为了获得最佳体验（并自动应用针对轻小说、剧本、短句优化的三种 Prompt 模式），请使用我们配套开发的开源前端：
 
 👉 **前往下载：[Murasaki Translator](https://github.com/soundstarrain/Murasaki-Translator)**
 
 ### 2. Python 推理 (Transformers)
+
+以下代码展示了如何调用 **v0.2 模型的轻小说模式**：
 
 ```bash
 pip install transformers torch accelerate
@@ -54,9 +89,9 @@ pip install transformers torch accelerate
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "Murasaki-Project/Murasaki-8B-v0.1"
+# 推荐使用 14B 版本以获得最佳效果
+model_id = "Murasaki-Project/Murasaki-14B-v0.2"
 
-# 加载模型
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(
     model_id, 
@@ -64,96 +99,63 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto"
 )
 
-# 构造 Prompt (必须包含术语表和 System Prompt)
-system_prompt = """你是一位精通二次元文化的资深轻小说翻译家。
-【强制术语表】
-レールガン: 超电磁炮
-妹: 妹妹
+# v0.2 专用 Prompt 模板 (轻小说模式)
+NOVEL_SYSTEM_PROMPT = """你是一位精通二次元文化的资深轻小说翻译家。
+请将日文文本翻译成流畅、优美的中文。
 
-**任务要求：**
-1. **文风自适应：** 根据原文判断作品风格并定调。
-2. **隐形参考：** 译文需参考人类译文，但在思维链中严禁提及“参考译文”。
-3. **逻辑推导：** 必须分析省略主语、指代关系。"""
+**核心要求：**
+1. **深度思考：** 在翻译前，先在 <think> 标签中分析文风、补全主语并梳理逻辑。
+2. **信达雅：** 译文需符合中文轻小说阅读习惯，还原原作的沉浸感与文学性。
 
-user_input = "お兄ちゃん、私のレールガンを見て！"
+【术语表】
+{glossary}"""
 
+# 准备数据
+glossary_text = "レールガン: 超电磁炮\n妹: 妹妹"
+jp_text = "「お兄ちゃん、私のレールガンを見て！」"
+
+# 构造输入
+system_content = NOVEL_SYSTEM_PROMPT.format(glossary=glossary_text)
 messages = [
-    {"role": "system", "content": system_prompt},
-    {"role": "user", "content": f"请翻译：\n「{user_input}」"}
+    {"role": "system", "content": system_content},
+    {"role": "user", "content": f"请翻译：\n{jp_text}"}
 ]
 
 text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
 inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
-# 生成 (预留足够的 Token 给 CoT)
+# 生成 (建议 max_new_tokens > 2048 以容纳思考过程)
 generated_ids = model.generate(
     inputs.input_ids,
-    max_new_tokens=2048,
-    temperature=0.7
+    max_new_tokens=4096,
+    temperature=0.7,
+    repetition_penalty=1.05
 )
+
 response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 
-# 简单的解析，分离思考与正文
+# 解析输出
 if "<think>" in response and "</think>" in response:
-    thought = response.split("</think>")[0].replace("<think>", "").strip()
-    translation = response.split("</think>")[1].strip()
-    print(f"=== 思考过程 ===\n{thought}\n")
-    print(f"=== 翻译结果 ===\n{translation}")
+    parts = response.split("</think>")
+    thought = parts[0].replace("<think>", "").strip()
+    translation = parts[1].strip()
+    print(f"=== 🧠 思考过程 ===\n{thought}\n")
+    print(f"=== 📖 翻译结果 ===\n{translation}")
 else:
     print(response)
 ```
-
-### 3. vLLM 部署 (高性能)
-```bash
-vllm serve Murasaki-Project/Murasaki-8B-v0.1 --dtype bfloat16 --max-model-len 8192
-```
-
----
-
-## 📝 Prompt 格式指南
-
-为了触发 System 2 推理能力，建议严格遵守以下 Prompt 结构：
-
-```text
-[System]
-你是一位精通二次元文化的资深轻小说翻译家。
-
-【强制术语表】
-原文1: 译文1
-原文2: 译文2
-
-**任务要求：**
-1. **文风自适应：** ...
-2. **隐形参考：** ...
-3. **逻辑推导：** ...
-
-[User]
-请翻译：
-「原文内容...」
-```
-
----
-
-## 📊 评测 (Benchmark)
-
-我们在 **[Murasaki-ACGN Benchmark](https://github.com/soundstarrain/Murasaki-benchmark)** 数据集上进行了测试。
-v0.1 版本在长文本连贯性上展现了优异的性能：
-
-| Model | Size | Long Text (COMET) | Short Text (COMET) |
-| :--- | :--- | :--- | :--- |
-| **Murasaki-8B-v0.1** | 8B | **0.8767** | 0.8172 |
-| Sakura-14B (Qwen2.5) | 14B | 0.8735 | **0.8282** |
-| Qwen3-14B-Instruct | 14B | 0.8702 | 0.8133 |
 
 ---
 
 ## 🗓️ Roadmap
 
-- [x] 发布 v0.1-Alpha (8B) 模型
-- [x] 发布 GGUF 量化版本
+- [x] 发布 v0.1 Alpha (8B)
 - [x] 发布 Murasaki GUI 客户端
-- [ ] 适配 vLLM 推理框架
-- [ ] 发布 v0.2 模型 (优化已知问题，进行DPO等)
+- [x] **发布 v0.2 正式版 (8B & 14B)**
+    - [x] 增强的 CoT 逻辑
+    - [x] 针对轻小说/剧本/短句的多模式支持
+    - [x] GGUF 量化适配
+- [ ] 适配 vLLM 推理框架 (进行中)
 - [ ] 发布微调数据集与训练脚本
 
 ---
