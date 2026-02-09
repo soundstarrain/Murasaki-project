@@ -19,9 +19,6 @@
   <a href="https://github.com/soundstarrain/Murasaki-benchmark" target="_blank">
     <img src="https://img.shields.io/badge/Benchmark-SOTA_Performance-blue?style=for-the-badge&logo=google-analytics" alt="Benchmark">
   </a>
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-    <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=for-the-badge" alt="License">
-  </a>
 
 </div>
 
