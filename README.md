@@ -2,11 +2,10 @@
 <div align="center">
   <img src="https://github.com/soundstarrain/Murasaki-Translator/raw/main/GUI/resources/icon.png" width="160" height="160" style="border-radius: 50%; box-shadow: 0 4px 15px rgba(128, 0, 128, 0.3);">
   
-  <h1 style="font-size: 2.5em; margin-bottom: 10px;">🔮 Murasaki Project</h1>
+  <h1 style="font-size: 2.5em; margin-bottom: 10px;">Murasaki Project</h1>
   
-  <p align="center">
-    <strong>System 2 Reasoning Paradigm for ACGN Translation</strong><br>
-    原生 CoT 思维链 · 长上下文支持 · 沉浸式翻译体验
+  <p style="font-size: 1.2em; color: #6b7280;">
+    <b>Native CoT & System 2 Reasoning for ACGN Translation</b>
   </p>
 
   <!-- Badges -->
@@ -17,7 +16,7 @@
     <img src="https://img.shields.io/badge/Tool-Murasaki_GUI-6B21A8?style=for-the-badge&logo=windows" alt="Translator Tool">
   </a>
   <a href="https://github.com/soundstarrain/Murasaki-benchmark" target="_blank">
-    <img src="https://img.shields.io/badge/Benchmark-SOTA_Performance-blue?style=for-the-badge&logo=google-analytics" alt="Benchmark">
+    <img src="https://img.shields.io/badge/Benchmark-Murasaki_ACGN-blue?style=for-the-badge&logo=google-analytics" alt="Benchmark">
   </a>
 
 </div>
