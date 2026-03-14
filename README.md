@@ -45,7 +45,7 @@
 | **Murasaki-14B-v0.2-GGUF** | **GGUF** | 12GB+ | **进阶版**：本地大显存用户推荐 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-14B-v0.2-GGUF) |
 | **Murasaki-8B-v0.2** | BF16 | 24GB+ | **标准版**：全精度权重，性能均衡 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.2) |
 | **Murasaki-8B-v0.2-GGUF** | **GGUF** | 6GB+ | **轻量版**：兼容性强，适配主流中高端显卡 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.2-GGUF) |
-| **Murasaki-4B-v0.3** | BF16 | 8GB+ | **极速版**：v0.3 新架构首发，响应极其迅速 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-4B-v0.3) |
+| **Murasaki-4B-v0.3** | BF16 | 8GB+ | **极速版**：轻量级的全精度权重 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-4B-v0.3) |
 | **Murasaki-4B-v0.3-GGUF** | **GGUF** | 4GB+ | **极限轻量版**：极低显存占用，适合老旧设备与集显 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-4B-v0.3-GGUF) |
 
 ---
