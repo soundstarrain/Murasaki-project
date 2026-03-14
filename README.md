@@ -67,7 +67,7 @@
 
 ### 2. Python 推理 (Transformers)
 
-请参考huggingface的队友模型卡片
+请参考huggingface的对应的模型卡片
 
 ---
 
