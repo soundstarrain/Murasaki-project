@@ -63,7 +63,7 @@
 ## 🛠️ 快速开始 (Usage)
 
 ### 1. 使用 GUI 客户端 (推荐)
-为了获得自动化程度最高、体验最完整的翻译服务（含自动模式切换），请使用开源 GUI 客户端：
+为了获得自动化程度最高、体验最完整的翻译服务，推荐使用我们配套开发的GUI客户端：
 
 👉 **下载地址：[Murasaki Translator (GitHub)](https://github.com/soundstarrain/Murasaki-Translator)**
 
