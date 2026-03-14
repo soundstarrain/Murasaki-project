@@ -48,24 +48,16 @@ Murasaki v0.2 系列现已全面发布，覆盖 8B 到 14B 参数量，支持全
 | **Murasaki-14B-v0.2-GGUF** | **GGUF** | 12GB+ | **进阶版**：本地大显存用户推荐 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-14B-v0.2-GGUF) |
 | **Murasaki-8B-v0.2** | BF16 | 24GB+ | **标准版**：全精度权重，均衡之选 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.2) |
 | **Murasaki-8B-v0.2-GGUF** | **GGUF** | 6GB+ | **轻量版**：兼容性最强，适合大多数显卡 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-8B-v0.2-GGUF) |
+| **Murasaki-4B-v0.3** | BF16 | 8GB+ | **极速版**：轻量版全精度权重 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-4B-v0.3) |
+| **Murasaki-4B-v0.3-GGUF** | **GGUF** | 4GB+ | **极限轻量版**：显存占用极低，适合轻薄本与老显卡 | [HuggingFace](https://huggingface.co/Murasaki-Project/Murasaki-4B-v0.3-GGUF) |
 
 ---
 
 ## 📊 评测表现 (Benchmark)
 
-我们在 **[Murasaki-ACGN Benchmark](https://github.com/soundstarrain/Murasaki-benchmark)** 上评估了将近四十个主流模型。
-**Murasaki-14B-v0.2** 在综合得分及长短文本测试中均取得了第一名的成绩。
+在 **Murasaki-ACGN Benchmark** 综合评测中，Murasaki 系列模型表现卓越：**Murasaki-14B-v0.2** 取得总分第一；系列的其他模型在这个特定任务的表现也位列前列，性能超越了所有主流商业Sota模型的表现。
 
-| Rank | Model | **Overall Avg** | Short | Long |
-| :--- | :--- | :--- | :--- | :--- |
-| 🥇 | **Murasaki-14B-v0.2** | **0.8545** | **0.8289** | **0.8801** |
-| 🥈 | Murasaki-8B-v0.1 | 0.8523 | 0.8269 | 0.8778 |
-| 🥉 | **Murasaki-8B-v0.2** | **0.8522** | **0.8271** | **0.8773** |
-| 4 | Gemini-3-Flash-Preview | 0.8512 | 0.8262 | 0.8765 |
-| 5 | Sakura-Qwen-2.5-14B | 0.8509 | 0.8282 | 0.8735 |
-
-> *注：以上分数基于 IQ4_XS (4-bit) 量化版本测得，全精度版本表现预期更优。*
-
+具体的测量方法，数据集，测试结果与排名请参考：[Murasaki-benchmark](https://github.com/soundstarrain/Murasaki-benchmark)
 ---
 
 ## 🛠️ 快速开始 (Usage)
@@ -77,70 +69,8 @@ Murasaki v0.2 系列现已全面发布，覆盖 8B 到 14B 参数量，支持全
 
 ### 2. Python 推理 (Transformers)
 
-以下代码展示了如何调用 **v0.2 模型的轻小说模式**：
+请参考huggingface的队友模型卡片
 
-```bash
-pip install transformers torch accelerate
-```
-
-```python
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-# 推荐使用 14B 版本以获得最佳效果
-model_id = "Murasaki-Project/Murasaki-14B-v0.2"
-
-tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(
-    model_id, 
-    torch_dtype=torch.bfloat16, 
-    device_map="auto"
-)
-
-# v0.2 专用 Prompt 模板 (轻小说模式)
-NOVEL_SYSTEM_PROMPT = """你是一位精通二次元文化的资深轻小说翻译家。
-请将日文文本翻译成流畅、优美的中文。
-
-**核心要求：**
-1. **深度思考：** 在翻译前，先在 <think> 标签中分析文风、补全主语并梳理逻辑。
-2. **信达雅：** 译文需符合中文轻小说阅读习惯，还原原作的沉浸感与文学性。
-
-【术语表】
-{glossary}"""
-
-# 准备数据
-glossary_text = "レールガン: 超电磁炮\n妹: 妹妹"
-jp_text = "「お兄ちゃん、私のレールガンを見て！」"
-
-# 构造输入
-system_content = NOVEL_SYSTEM_PROMPT.format(glossary=glossary_text)
-messages = [
-    {"role": "system", "content": system_content},
-    {"role": "user", "content": f"请翻译：\n{jp_text}"}
-]
-
-text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-inputs = tokenizer([text], return_tensors="pt").to(model.device)
-
-# 生成 (建议 max_new_tokens > 2048 以容纳思考过程)
-generated_ids = model.generate(
-    inputs.input_ids,
-    max_new_tokens=4096,
-    temperature=0.7,
-    repetition_penalty=1.05
-)
-
-response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-
-# 解析输出
-if "<think>" in response and "</think>" in response:
-    parts = response.split("</think>")
-    thought = parts[0].replace("<think>", "").strip()
-    translation = parts[1].strip()
-    print(f"=== 🧠 思考过程 ===\n{thought}\n")
-    print(f"=== 📖 翻译结果 ===\n{translation}")
-else:
-    print(response)
 ```
 
 ---
