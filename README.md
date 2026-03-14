@@ -38,8 +38,6 @@
 
 ## 📥 模型矩阵 (Model Matrix)
 
-Murasaki v0.2 系列现已全面发布，覆盖 8B 到 14B 参数量，支持全精度与 GGUF 量化。
-
 > **✨ Now Live:** 无需下载模型，点击 **[Online Demo](https://huggingface.co/spaces/Murasaki-Project/online-demo)** 在线体验模型。
 
 | 模型版本 (Model) | 类型 | 显存参考 | 适用场景 | 下载链接 |
@@ -70,8 +68,6 @@ Murasaki v0.2 系列现已全面发布，覆盖 8B 到 14B 参数量，支持全
 ### 2. Python 推理 (Transformers)
 
 请参考huggingface的队友模型卡片
-
-```
 
 ---
 
